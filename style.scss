@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .box {
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    animation: boxAnimation 5s ease-in 0.5s 1 alternate-reverse both;
+  }
+}
+
+@keyframes boxAnimation {
+  0% {
+    background-color: white;
+  }
+  25% {
+    background-color: red;
+  }
+  75% {
+    background-color: blue;
+  }
+  100% {
+    background-color: black;
+  }
+}
