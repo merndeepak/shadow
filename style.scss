@@ -15,7 +15,9 @@ main {
   height: 100%;
   width: 100%;
   display: flex;
+
   justify-content: center;
+  gap: 40px;
   align-items: center;
   .box {
     max-width: 300px;
@@ -25,18 +27,85 @@ main {
     flex-direction: column;
     gap: 10px;
     border-radius: 15px;
-    background: linear-gradient(black, black) padding-box,
-      conic-gradient(from var(--rotate), black, rebeccapurple, black) border-box;
+    transition: all 0.1s ease-in-out;
+    border: 1px solid rebeccapurple;
 
-    border: 5px solid rgba(102, 51, 153, 0);
     animation: rotateAnimation 2s infinite;
-
+    animation-play-state: paused;
+    h1 {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    p {
+      font-size: 15px;
+      font-weight: 300;
+    }
     img {
       width: 100%;
       margin-top: 11px;
       border-radius: 15px;
     }
+    &:hover {
+      background: linear-gradient(black, black) padding-box,
+        conic-gradient(from var(--rotate), black, rebeccapurple, black)
+          border-box;
+      border: 5px solid rgba(102, 51, 153, 0.375);
+      animation-play-state: running;
+      scale: 1.2 !important;
+      filter: blur(0) !important;
+      box-shadow: 0 0 30px rebeccapurple;
+    }
   }
+  .gtaviceCity:hover {
+    background: linear-gradient(black, black) padding-box,
+      conic-gradient(from var(--rotate), #ff3ec5, #00ffff, #9b59b6, #ff3ec5)
+        border-box;
+    border: 5px solid rgba(102, 51, 153, 0.375);
+    animation-play-state: running;
+    scale: 1.2 !important;
+    filter: blur(0) !important;
+    box-shadow: 0 0 30px #ff3ec5;
+    color: #00ffff;
+  }
+  .gtasan:hover {
+    background: linear-gradient(black, black) padding-box,
+      conic-gradient(from var(--rotate), #2ecc71, black, #f1c40f, #2ecc71)
+        border-box;
+    border: 5px solid rgba(102, 51, 153, 0.375);
+    animation-play-state: running;
+    scale: 1.2 !important;
+    filter: blur(0) !important;
+    box-shadow: 0 0 30px #2ecc71;
+    color: #f1c40f;
+  }
+  .gta5:hover {
+    background: linear-gradient(black, black) padding-box,
+      conic-gradient(from var(--rotate), yellow, lightblue, darkgrey, yellow)
+        border-box;
+    border: 5px solid rgba(102, 51, 153, 0.375);
+    animation-play-state: running;
+    scale: 1.2 !important;
+    filter: blur(0) !important;
+    box-shadow: 0 0 30px #ff3ec5;
+    color: lightblue;
+  }
+  .gta6:hover {
+    background: linear-gradient(black, black) padding-box,
+      conic-gradient(from var(--rotate), #9b59b6, #1abc9c, #ff3ec5, #9b59b6)
+        border-box;
+    border: 5px solid rgba(102, 51, 153, 0.375);
+    animation-play-state: running;
+    scale: 1.2 !important;
+    filter: blur(0) !important;
+    box-shadow: 0 0 30px #ff3ec5;
+    color: #1abc9c;
+  }
+}
+
+main:has(.box:hover) .box:not(:hover) {
+  scale: 0.8;
+  filter: blur(2px);
+  border: 0;
 }
 
 @property --rotate {
